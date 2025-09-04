@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Asaxiy</title>
     <link rel="stylesheet" href="./css/output.css">
 </head>
 
@@ -14,23 +14,28 @@
             <nav class="header_nav h-[78px] border-b border-[#E6E8EE] flex items-center gap-2 justify-between">
                 <div class="header_left flex items-center gap-2">
                     <div class="header_site_logo">
-                        <img class="" src="./assets/images/logo-asaxiy.svg" alt="Logo Asaxiy">
+                        <a href="./index.html">
+                            <img class="" src="./assets/images/logo-asaxiy.svg" alt="Logo Asaxiy">
+                        </a>
                     </div>
-                    <div class="header_catalog">
+                    <div class="header_catalog hidden lg:block">
                         <button class="h-11 px-4 flex items-center gap-1 bg-primary rounded-lg">
                             <img class="w-6" src="./assets/images/icon-menu.svg" alt="Menu Icon">
                             <p class="text-base font-[P6] text-white">Catalog</p>
                         </button>
                     </div>
                 </div>
-                <div class="header_search flex-1 flex items-center h-11">
+                <div class="flex items-center justify-center lg:hidden">
+                    <img class="w-7" src="./assets/images/icon-burger.svg" alt="">
+                </div>
+                <div class="header_search hidden xl:flex flex-1 items-center h-11">
                     <input
                         class="w-full h-full outline-none border-2 border-primary rounded-l-lg px-3 placeholder:text-secondary-text"
                         type="text" placeholder="Search...">
                     <button
                         class="w-[94px] h-full bg-primary rounded-r-lg text-white text-base font-[P4]">Search</button>
                 </div>
-                <div class="header_right flex items-center">
+                <div class="header_right hidden lg:flex items-center">
                     <div class="w-[90px] flex flex-col items-center gap-.5">
                         <img class="w-7 h-7" src="./assets/images/icon-compare.svg" alt="Compare Icon">
                         <p class="text-xs font-[P4]">Comparison</p>
@@ -43,10 +48,13 @@
                         <img class="w-7 h-7" src="./assets/images/icon-tracker.svg" alt="Track Icon">
                         <p class="text-xs font-[P4]">Delivery</p>
                     </div>
-                    <div class="w-[75px] flex flex-col items-center gap-.5">
-                        <img class="w-6 h-7" src="./assets/images/icon-cart.svg" alt="Cart Icon">
-                        <p class="text-xs font-[P4]">Cart</p>
-                    </div>
+                    <a href="./pages/cart.html">
+                        <div class="w-[75px] relative flex flex-col items-center gap-.5">
+                            <img class="w-6 h-7" src="./assets/images/icon-cart.svg" alt="Cart Icon">
+                            <p class="text-xs font-[P4]">Cart</p>
+                            <div class="cart_count_header absolute -top-2 right-4 size-5 flex items-center justify-center rounded-full bg-primary text-white text-sm font-[P5]"></div>
+                        </div>
+                    </a>
                     <div class="w-[75px] flex flex-col items-center gap-.5">
                         <img class="w-6 h-7" src="./assets/images/icon-heart.svg" alt="Heart Icon">
                         <p class="text-xs font-[P4]">Liked</p>
@@ -61,7 +69,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="header_bottom h-14 flex items-center justify-between gap-4">
+            <div class="header_bottom h-14 hidden lg:flex items-center justify-between gap-4">
                 <p class="text-[15px] font-[P4] text-[#282830]">Super price</p>
                 <p class="text-[15px] font-[P4] text-[#282830]">0-0-6</p>
                 <p class="text-[15px] font-[P4] text-[#282830]">Best for students</p>
@@ -78,8 +86,8 @@
             <div class="container">
                 <div class="products_wrapper">
                     <h2 class="text-xl font-[P6] mt-6">Products</h2>
-                    <div class="products_card_wrapper pt-3 pb-8 grid grid-cols-5 gap-5">
-                        
+                    <div class="products_card_wrapper pt-3 pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
                     </div>
                 </div>
             </div>

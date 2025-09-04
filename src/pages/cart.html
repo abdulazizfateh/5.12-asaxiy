@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+
+<body>
+    <header class="site_header shadow-[0_10px_30px_0_rgba(209,213,223,0.5)]">
+        <div class="container">
+            <nav class="header_nav h-[78px] border-b border-[#E6E8EE] flex items-center gap-2 justify-between">
+                <div class="header_left flex items-center gap-2">
+                    <div class="header_site_logo">
+                        <a href="../index.html">
+                            <img class="" src="../assets/images/logo-asaxiy.svg" alt="Logo Asaxiy">
+                        </a>
+                    </div>
+                    <div class="header_catalog hidden lg:block">
+                        <button class="h-11 px-4 flex items-center gap-1 bg-primary rounded-lg">
+                            <img class="w-6" src="../assets/images/icon-menu.svg" alt="Menu Icon">
+                            <p class="text-base font-[P6] text-white">Catalog</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center lg:hidden">
+                    <img class="w-7" src="../assets/images/icon-burger.svg" alt="">
+                </div>
+                <div class="header_search hidden xl:flex flex-1 items-center h-11">
+                    <input
+                        class="w-full h-full outline-none border-2 border-primary rounded-l-lg px-3 placeholder:text-secondary-text"
+                        type="text" placeholder="Search...">
+                    <button
+                        class="w-[94px] h-full bg-primary rounded-r-lg text-white text-base font-[P4]">Search</button>
+                </div>
+                <div class="header_right hidden lg:flex items-center">
+                    <div class="w-[90px] flex flex-col items-center gap-.5">
+                        <img class="w-7 h-7" src="../assets/images/icon-compare.svg" alt="Compare Icon">
+                        <p class="text-xs font-[P4]">Comparison</p>
+                    </div>
+                    <div class="w-[90px] flex flex-col items-center gap-.5">
+                        <img class="w-7 h-7" src="../assets/images/icon-wallet.svg" alt="Wallet Icon">
+                        <p class="text-xs font-[P4]">Payment</p>
+                    </div>
+                    <div class="w-[90px] flex flex-col items-center gap-.5">
+                        <img class="w-7 h-7" src="../assets/images/icon-tracker.svg" alt="Track Icon">
+                        <p class="text-xs font-[P4]">Delivery</p>
+                    </div>
+                    <a href="./cart.html">
+                        <div class="w-[75px] flex flex-col items-center gap-.5">
+                            <img class="w-6 h-7" src="../assets/images/icon-cart.svg" alt="Cart Icon">
+                            <p class="text-xs font-[P4]">Cart</p>
+                        </div>
+                    </a>
+                    <div class="w-[75px] flex flex-col items-center gap-.5">
+                        <img class="w-6 h-7" src="../assets/images/icon-heart.svg" alt="Heart Icon">
+                        <p class="text-xs font-[P4]">Liked</p>
+                    </div>
+                    <div class="w-[75px] flex flex-col items-center gap-.5">
+                        <img class="w-6 h-7" src="../assets/images/icon-flag.svg" alt="Flag Uzbekistan">
+                        <p class="text-xs font-[P4]">Uzbek</p>
+                    </div>
+                    <div class="w-[90px] flex flex-col items-center gap-.5">
+                        <img class="w-5 h-7" src="../assets/images/icon-user.svg" alt="User Icon">
+                        <p class="text-xs font-[P4]">Sign in</p>
+                    </div>
+                </div>
+            </nav>
+            <div class="header_bottom h-14 hidden lg:flex items-center justify-between gap-4">
+                <p class="text-[15px] font-[P4] text-[#282830]">Super price</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">0-0-6</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">Best for students</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">Smartphones</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">Household appliances</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">Books</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">TVs</p>
+                <p class="text-[15px] font-[P4] text-[#282830]">Notebooks</p>
+            </div>
+        </div>
+    </header>
+    <main class="site_main">
+        <section class="section_cart">
+            <div class="container">
+                <div class="cart_wrapper mt-6 mb-16">
+                    <p class="font-[P5] text-2xl mb-4">Cart</p>
+                    <div class="cart_info_not_found hidden w-full h-[60vh] flex-col items-center justify-center">
+                        <div class="mb-4">
+                            <img src="../assets/images/icon-bag.svg" alt="">
+                        </div>
+                        <p class="text-xl font-[P5] mb-1">There are no items in your cart yet.</p>
+                        <p class="text-base font-[P4] mb-4">Start with the basics or find a product using the search
+                            feature.</p>
+                        <a href="../index.html">
+                            <button class="bg-primary h-12 px-5 rounded-lg text-white text-sm font-[P5]">Back to
+                                home</button>
+                        </a>
+                    </div>
+                    <div class="cart_info_wrapper grid grid-cols-1 xl:grid-cols-[3fr_1fr] gap-6">
+                        <div
+                            class="cart_info_products bg-white rounded-[20px] shadow-[0_10px_30px_0_rgba(209,213,223,0.5)] p-3 md:p-4 lg:p-6">
+                        </div>
+                        <div
+                            class="cart_info_total_price h-[210px] bg-white rounded-[20px] shadow-[0_10px_30px_0_rgba(209,213,223,0.5)] p-6">
+                            <p class="text-sm font-[P4] text-third mb-5">There is <span class="cart_count">1</span> item
+                                in your cart.</p>
+                            <div class="flex items-center gap-2 justify-between pb-5 border-b border-[#c2c6d1]">
+                                <p class="text-sm font-[P4]">Total:</p>
+                                <p class="cart_total text-lg font-[P6]"></p>
+                            </div>
+                            <div class="flex items-center justify-center mt-6">
+                                <button class="bg-primary h-12 px-5 rounded-lg text-white text-sm font-[P5]">Proceed to checklist
+                                    </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../js/cart.js"></script>
+    </main>
+</body>
+
+</html>
