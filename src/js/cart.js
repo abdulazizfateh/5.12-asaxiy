@@ -3,8 +3,14 @@ const cartNotFound = document.querySelector(".cart_info_not_found");
 const cartInfoProductsWrapperEl = document.querySelector(".cart_info_products");
 const cartCountEl = document.querySelector(".cart_count");
 const cartTotalEl = document.querySelector(".cart_total");
+const cartCountHeaderEl = document.querySelector(".cart_count_header");
+const likedCountHeaderEl = document.querySelector(".liked_count_header");
 
 let cartData = JSON.parse(localStorage.getItem("cart"));
+let likedData = JSON.parse(localStorage.getItem("liked"));
+cartCountHeaderEl.textContent = cartData.length;
+likedCountHeaderEl.textContent = likedData.length;
+
 cartCountEl.textContent = cartData.length;
 const renderCartData = () => {
     cartInfoProductsWrapperEl.innerHTML = "";
@@ -62,6 +68,7 @@ cartInfoProductsWrapperEl.addEventListener("click", (e) => {
             checkCart();
             cartCountEl.textContent = cartData.length;
             calcTotalPrice();
+            cartCountHeaderEl.textContent = cartData.length;
         }
 
         const parent = e.target.closest(".cart_info_product");

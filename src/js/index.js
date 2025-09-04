@@ -2,9 +2,13 @@ const API = "https://68b8916ab7154050432895c3.mockapi.io/products";
 
 const productsWrapperEl = document.querySelector(".products_card_wrapper");
 const cartCountHeaderEl = document.querySelector(".cart_count_header");
+const likedCountHeaderEl = document.querySelector(".liked_count_header");
 let productsData = [];
+
 let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+let likedData = JSON.parse(localStorage.getItem("liked")) || [];
 cartCountHeaderEl.textContent = cartData.length;
+likedCountHeaderEl.textContent = likedData.length;
 
 const getProductData = async () => {
     const response = await fetch(API);
@@ -20,10 +24,11 @@ const renderProductCards = (data) => {
         const newProductCard = document.createElement("div");
         newProductCard.className = "product_card bg-white rounded-[20px] overflow-hidden flex flex-col";
         newProductCard.innerHTML = `
-                            <div class="product_card_image flex items-center justify-center">
+                            <div class="product_card_image relative flex items-center justify-center">
                                 <img class="h-40 object-cover"
                                     src="${item.image}"
                                     alt="">
+                                    <img data-id="${item.id}" class="like_btn w-5 cursor-pointer absolute top-4 right-3" src="./assets/images/icon-heart.svg" alt="" />
                             </div>
                             <div class="product_card_body p-4 flex flex-col flex-1">
                                 <p class="text-sm font-[P4] line-clamp-2 mb-2">${item.title}</p>
@@ -63,17 +68,25 @@ const renderProductCards = (data) => {
 
 productsWrapperEl.addEventListener("click", (e) => {
     const id = +e.target.dataset.id;
+    const product = productsData.find((item) => item.id === id);
     if (e.target.classList.contains("product_card_body_add_btn")) {
-        console.log(11);
-        const product = productsData.find((item) => item.id === id);
         cartData = [...cartData, { ...product, quantity: 1 }];
         cartCountHeaderEl.textContent = cartData.length;
         renderProductCards(productsData);
     } else if (e.target.classList.contains("product_card_body_remove_btn")) {
-        console.log(10);
         cartData = cartData.filter((item) => item.id !== id);
         cartCountHeaderEl.textContent = cartData.length;
         renderProductCards(productsData);
+    } else if (e.target.classList.contains("like_btn")) {
+        const doesExist = likedData.some((item) => item.id === id);
+        if (!doesExist) {
+            likedData = [...likedData, product];
+            likedCountHeaderEl.textContent = likedData.length;
+        } else {
+            likedData = likedData.filter((item) => item.id !== id);
+            likedCountHeaderEl.textContent = likedData.length;
+        }
     }
+    localStorage.setItem("liked", JSON.stringify(likedData));
     localStorage.setItem("cart", JSON.stringify(cartData));
 })
